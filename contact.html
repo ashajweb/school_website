@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - A.M.C Girls Urdu School No.3</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function sendMessage() {
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+      const encodedMessage = encodeURIComponent(
+        `Hello, my name is ${name}.\n\nInquiry:\n${message}`
+      );
+      const whatsappURL = `https://wa.me/918805868571?text=${encodedMessage}`;
+      window.open(whatsappURL, "_blank");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>A.M.C Girls Urdu School No.3</h1>
+    <p class="tagline">Empowering Girls Through Education</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h2>Contact Us</h2>
+      <form onsubmit="event.preventDefault(); sendMessage();">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" required />
+
+        <label for="message">Your Inquiry:</label>
+        <textarea id="message" rows="5" required></textarea>
+
+        <button type="submit">Send via WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 A.M.C Girls Urdu School No.3. All rights reserved.</p>
+  </footer>
+</body>
+</html>
